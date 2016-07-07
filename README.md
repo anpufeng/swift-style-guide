@@ -29,11 +29,11 @@ This guide was last updated for Swift 2.2 on 6/21/2016.
 
 ## 1. Code Formatting
 
-* **1.1** Use 4 spaces for tabs.
-* **1.2** Avoid uncomfortably long lines with a hard maximum of 160 characters per line (Xcode->Preferences->Text Editing->Page guide at column: 160 is helpful for this)
-* **1.3** Ensure that there is a newline at the end of every file.
-* **1.4** Ensure that there is no trailing whitespace anywhere (Xcode->Preferences->Text Editing->Automatically trim trailing whitespace + Including whitespace-only lines).
-* **1.5** Do not place opening braces on new lines - we use the [1TBS style](https://en.m.wikipedia.org/wiki/Indent_style#Variant:_1TBS).
+* **1.1** 使用4个空格来代替Tabs.
+* **1.2** 避免过长的行，可以在XCode中进行设置单行最大长度：(Xcode->Preferences->Text Editing->Page guide at column: 160 is helpful for this).
+* **1.3** 保证每个文件结尾都存在一个新行.
+* **1.4** 避免无意义的尾随空格: (Xcode->Preferences->Text Editing->Automatically trim trailing whitespace + Including whitespace-only lines).
+* **1.5** 避免将单独的左花括号放置到一行，我们参考了： [1TBS style](https://en.m.wikipedia.org/wiki/Indent_style#Variant:_1TBS).
 
 ```swift
 class SomeClass {
@@ -51,7 +51,7 @@ class SomeClass {
 }
 ```
 
-* **1.6** When writing a type for a variable, a key for a dictionary, a function argument, a protocol conformance, or a superclass, don't add a space before the colon.
+* **1.6** 在写变量的类型声明、字典类型的键、函数参数、协议的声明或者父类的时候，不要在冒号前添加空格.
 
 ```swift
 // specifying type
@@ -82,13 +82,13 @@ extension PirateViewController: UITableViewDataSource {
 }
 ```
 
-* **1.7** In general, there should be a space following a comma.
+* **1.7** 一般来说，逗号后面都要跟随一个空格.
 
 ```swift
 let myArray = [1, 2, 3, 4, 5]
 ```
 
-* **1.8** There should be a space before and after a binary operator such as `+`, `==`, or `->`. There should also not be a space after a `(` and before a `)`.
+* **1.8** 在二元操作符譬如+, ==, 或者 ->的前后需要加上空格，但是对于( 、`)的前后不需要加空格.
 
 ```swift
 let myValue = 20 + (30 / 2) * 3
@@ -100,7 +100,7 @@ func pancake() -> Pancake {
 }
 ```
 
-* **1.9** We follow Xcode's recommended indentation style (i.e. your code should not change if CTRL-I is pressed). When declaring a function that spans multiple lines, prefer using that syntax to which Xcode, as of version 7.3, defaults.
+* **1.9** 我们默认使用Xcode推荐的格式化风格(CTRL-I) ，在声明某个函数的时候会多行排布参数.
 
 ```swift
 // Xcode indentation for a function declaration that spans multiple lines
@@ -120,7 +120,7 @@ if myFirstVariable > (mySecondVariable + myThirdVariable)
 }
 ```
 
-* **1.10** When calling a function that has many parameters, put each argument on a separate line with a single extra indentation.
+* **1.10** 在调用多参数函数的时候，会把多个参数放置到单独的行中.
 
 ```swift
 someFunctionWithManyArguments(
@@ -129,7 +129,7 @@ someFunctionWithManyArguments(
     thirdArgument: someOtherLocalVariable)
 ```
 
-* **1.11** When dealing with an implicit array or dictionary large enough to warrant splitting it into multiple lines, treat the `[` and `]` as if they were braces in a method, `if` statement, etc. Closures in a method should be treated similarly.
+* **1.11** 对于大型的数组或者字典类型，应该将其分割到多行内，[ 与 ]类比于花括号进行处理。对于闭包而言也应该同样适合于该规则.
 
 ```swift
 someFunctionWithABunchOfArguments(
@@ -147,7 +147,7 @@ someFunctionWithABunchOfArguments(
     })
 ```
 
-* **1.12** Prefer using local variables or other mitigation techniques to avoid multi-line predicates where possible.
+* **1.12** 尽可能地使用本地变量的方式来避免多行的判断语句.
 
 ```swift
 // PREFERRED
@@ -168,13 +168,13 @@ if x == firstReallyReallyLongPredicateFunction()
 
 ## 2. Naming
 
-* **2.1** There is no need for Objective-C style prefixing in Swift (e.g. use just `GuybrushThreepwood` instead of `LIGuybrushThreepwood`).
+* **2.1** Swift中不需要再使用Objective-C那样的前缀，譬如使用 GuybrushThreepwood 而不是LIGuybrushThreepwood.
 
-* **2.2** Use `PascalCase` for type names (e.g. `struct`, `enum`, `class`, `typedef`, `associatedtype`, etc.).
+* **2.2** 对于类型名即`struct`, `enum`, `class`, `typedef`, `associatedtype`等等使用 PascalCase.
 
-* **2.3** Use `camelCase` (initial lowercase letter) for function, method, variable, constant, argument names, etc.).
+* **2.3** 对于函数名、方法名、变量名、常量、参数名等使用camelCase.
 
-* **2.4** When dealing with an acronym or other name that is usually written in all caps, actually use all caps in any names that use this in code. The exception is if this word is at the start of a name that needs to start with lowercase - in this case, use all lowercase for the acronym.
+* **2.4** 在使用首字母缩写的时候尽可能地全部大写，并且注意保证全部代码中的统一。不过如果缩写被用于命名的起始，那么就全部小写.
 
 ```swift
 // "HTML" is at the start of a variable name, so we use lowercase "html"
@@ -187,7 +187,7 @@ class URLFinder {
 }
 ```
 
-* **2.5** Use `k` prefix + PascalCase for naming all static constants that are not singletons.
+* **2.5** 对于静态常量使用 k 前缀 + PascalCase.
 
 ```swift
 class MyClassName {
@@ -204,7 +204,7 @@ class MyClassName {
 }
 ```
 
-* **2.6** For generics and associated types, use either a single capital letter or a `PascalCase` word that describes the generic. If this word clashes with a protocol that it conforms to or a superclass that it subclasses, you can append a `Type` suffix to the associated type or generic name.
+* **2.6** 对于泛型或者关联类型，使用PascalCase描述泛型，如果泛型名与其他重复，那么可以添加一个Type后缀名到泛型名上.
 
 ```swift
 class SomeClass<T> { /* ... */ }
@@ -217,7 +217,7 @@ protocol Sequence {
 }
 ```
 
-* **2.7** Names should be descriptive and unambiguous.
+* **2.7** 命名必须要是不模糊的并且方便表述的.
 
 ```swift
 // PREFERRED
@@ -227,7 +227,7 @@ class RoundAnimatingButton: UIButton { /* ... */ }
 class CustomButton: UIButton { /* ... */ }
 ```
 
-* **2.8** Do not abbreviate, use shortened names, or single letter names.
+* **2.8** 不要使用缩写，可以选择较为简短的单词.
 
 ```swift
 // PREFERRED
@@ -250,7 +250,7 @@ class RoundAnimating: UIButton {
 }
 ```
 
-* **2.9** Include type information in property names when it is not obvious otherwise.
+* **2.9** 对于不是很明显的类型需要将类型信息包含在属性名中.
 
 ```swift
 // PREFERRED
@@ -319,9 +319,9 @@ class ConnectionTableViewCell: UITableViewCell {
 }
 ```
 
-* **2.10** When naming function arguments, make sure that the function can be read easily to understand the purpose of each argument.
+* **2.10** 在编写函数参数的时候，要保证每个参数都易于理解其功能.
 
-* **2.11** As per [Apple's API Design Guidelines](https://swift.org/documentation/api-design-guidelines/), a `protocol` should be named as nouns if they describe what something is doing (e.g. `Collection`) and using the suffixes `able`, `ible`, or `ing` if it describes a capability (e.g. `Equatable`, `ProgressReporting`). If neither of those options makes sense for your use case, you can add a `Protocol` suffix to the protocol's name as well. Some example `protocol`s are below.
+* **2.11** 根据 Apple's API Design Guidelines, 对于`protocol`，如果其描述的是正在做的事情，譬如Collection，那么应该命名为名词。而如果是用于描述某种能力，譬如Equatable, ProgressReporting，那么应该添加 able, ible, 或者 ing 这样的后缀。如果你的协议并不符合上述两种情形，那么应该直接添加一个Protocol后缀，譬如.
 
 ```swift
 // here, the name is a noun that describes what the protocol does
@@ -351,9 +351,9 @@ protocol InputTextViewProtocol {
 
 ### 3.1 General
 
-* **3.1.1** Prefer `let` to `var` whenever possible.
+* **3.1.1** 尽可能地使用`let`来代替`var`.
 
-* **3.1.2** Prefer the composition of `map`, `filter`, `reduce`, etc. over iterating when transforming from one collection to another. Make sure to avoid using closures that have side effects when using these methods.
+* **3.1.2** 尽可能地使用 `map`, `filter`, `reduce`的组合来进行集合的转换等操作，并且尽可能地避免使用带有副作用的闭包.
 
 ```swift
 // PREFERRED
@@ -379,9 +379,9 @@ for integer in [4, 8, 15, 16, 23, 42] {
 }
 ```
 
-* **3.1.3** Prefer not declaring types for variable or constants if they can be inferred anyway.
+* **3.1.3** 尽可能地显式声明不方便进行类型推测的变量或者常量的类型名.
 
-* **3.1.4** If a function returns multiple values, prefer returning a tuple to using `inout` arguments (it’s best to use labeled tuples for clarity on what you’re returning if it is not otherwise obvious). If you use a certain tuple more than once, consider using a `typealias`. If you’re returning 3 or more items in a tuple, consider using a `struct` or `class` instead.
+* **3.1.4** 如果你的函数需要返回多个参数，那么尽可能地使用`Tuple`来代替`inout`参数。如果你会多次使用某个元组，那么应该使用`typealias`设置别名。如果返回的参数超过三个，那么应该使用结构体或者类来替代.
 
 ```swift
 func pirateName() -> (firstName: String, lastName: String) {
@@ -393,9 +393,9 @@ let firstName = name.firstName
 let lastName = name.lastName
 ```
 
-* **3.1.5** Be wary of retain cycles when creating delegates/protocols for your classes; typically, these properties should be declared `weak`.
+* **3.1.5** 在创建delegates/protocols的时候需要小心所谓的保留环(retain cycles)，这些属性需要被声明为`weak`.
 
-* **3.1.6** Be careful when calling `self` directly from a closure as this can cause a retain cycle - use a [capture list](https://developer.apple.com/library/ios/documentation/swift/conceptual/Swift_Programming_Language/Closures.html#//apple_ref/doc/uid/TP40014097-CH11-XID_163) when this might be the case:
+* **3.1.6** 在闭包中直接调用self可能会导致保留环，可以使用capture list 在这种情况下(https://developer.apple.com/library/ios/documentation/swift/conceptual/Swift_Programming_Language/Closures.html#//apple_ref/doc/uid/TP40014097-CH11-XID_163):
 
 ```swift
 myFunctionWithClosure() { [weak self] (error) -> Void in
@@ -413,9 +413,9 @@ myFunctionWithClosure() { [weak self] (error) -> Void in
 }
 ```
 
-* **3.1.7** Don't use labeled breaks.
+* **3.1.7** 不要使用 labeled breaks.
 
-* **3.1.8** Don't place parentheses around control flow predicates.
+* **3.1.8** 不要在控制流逻辑判断的时候加上圆括号.
 
 ```swift
 // PREFERRED
@@ -439,7 +439,7 @@ imageView.setImageWithURL(url, type: .person)
 imageView.setImageWithURL(url, type: AsyncImageView.Type.person)
 ```
 
-* **3.1.10** Don’t use shorthand for class methods since it is generally more difficult to infer the context from class methods as opposed to `enum`s.
+* **3.1.10** 避免在使用`enum`的时候写出全名.
 
 ```swift
 // PREFERRED
@@ -449,11 +449,11 @@ imageView.backgroundColor = UIColor.whiteColor()
 imageView.backgroundColor = .whiteColor()
 ```
 
-* **3.1.11** Prefer not writing `self.` unless it is required.
+* **3.1.11** 在非必要的时候不要写`self`.
 
-* **3.1.12** When writing methods, keep in mind whether the method is intended to be overridden or not. If not, mark it as `final`, though keep in mind that this will prevent the method from being overwritten for testing purposes. In general, `final` methods result in improved compilation times, so it is good to use this when applicable. Be particularly careful, however, when applying the `final` keyword in a library since it is non-trivial to change something to be non-`final` in a library as opposed to have changing something to be non-`final` in your local project.
+* **3.1.12** 在编写某个方法的时候注意考虑下这个方法是否有可能被复写，如果不可能被复写那么应该使用 `final`修饰符。还要注意加上`final`之后也会导致无法在测试的时候进行复写，所以还是需要综合考虑。一般而言，加上`final`修饰符后会提高编译的效率，所以应该尽可能地使用该修饰符.
 
-* **3.1.13** When using a statement such as `else`, `catch`, etc. that follows a block, put this keyword on the same line as the block. Again, we are following the [1TBS style](https://en.m.wikipedia.org/wiki/Indent_style#Variant:_1TBS) here. Example `if`/`else` and `do`/`catch` code is below.
+* **3.1.13** 在使用譬如`else`, `catch`等等类似的语句的时候，将关键字与花括号放在一行，同样遵循1TBS style规范，这边列出了常见的if/else 以及 do/catch (https://en.m.wikipedia.org/wiki/Indent_style#Variant:_1TBS) here. Example `if`/`else` and `do`/`catch` 示范代码.
 
 ```swift
 if someBoolean {
@@ -472,7 +472,7 @@ do {
 
 ### 3.2 Access Modifiers
 
-* **3.2.1** Write the access modifier keyword first if it is needed.
+* **3.2.1** 在需要的时候应该将访问修饰符放在关键字的第一位.
 
 ```swift
 // PREFERRED
@@ -482,7 +482,7 @@ private static let kMyPrivateNumber: Int
 static private let kMyPrivateNumber: Int
 ```
 
-* **3.2.2** The access modifier keyword should not be on a line by itself - keep it inline with what it is describing.
+* **3.2.2** 访问修饰符不应该单独放一行.
 
 ```swift
 // PREFERRED
@@ -497,9 +497,9 @@ class Pirate {
 }
 ```
 
-* **3.2.3** In general, do not write the `internal` access modifier keyword since it is the default.
+* **3.2.3** 一般来说，不要显式地写默认的 `internal`访问修饰符.
 
-* **3.2.4** If a variable needs to be accessed by unit tests, you will have to make it `internal` to use `@testable import ModuleName`. If a variable *should* be private, but you declare it to be `internal` for the purposes of unit testing, make sure you add an appropriate bit of documentation commenting that explains this. You can make use of the `- warning:` markup syntax for clarity as shown below.
+* **3.2.4** 如果某个变量需要在测试的时候被使用到，那么应该标识为`internal`来保证`@testable import ModuleName`。这里需要注意的是，对于某些应该被声明为`private`的变量因为测试用途而声明为了`internal`，那么应该在注释里特别地注明.
 
 ```swift
 /**
@@ -511,11 +511,9 @@ let pirateName = "LeChuck"
 
 ### 3.3 Custom Operators
 
-Prefer creating named functions to custom operators.
+尽可能地选用命名函数来代替自定义操作符。如果你打算引入一个自定义的操作符，那么一定要有*非常*充分的理由来说明为啥要讲一个新的操作符引入到全局作用域，而不是使用其他一些可替代的方式。你也可以选择去复写一些现有的操作符，譬如`==`来适应一些新的类型，不过要保证你添加的用法一定要与语义相符。譬如`==`应该只能用于表示相等性测试并且返回一个布尔值。
 
-If you want to introduce a custom operator, make sure that you have a *very* good reason why you want to introduce a new operator into global scope as opposed to using some other construct.
-
-You can override existing operators to support new types (especially `==`). However, your new definitions must preserve the semantics of the operator. For example, `==` must always test equality and return a boolean.
+.
 
 ### 3.4 Switch Statements and `enum`s
 
